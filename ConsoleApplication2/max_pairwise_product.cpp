@@ -63,7 +63,7 @@ long long MaxPairwiseProductFaster(const std::vector<int>& numbers)
         }
         else
         {
-            tempArray[i / 2] = i+1;
+            tempArray[i / 2] = (i + 1) % numbers.size();
         }
         if (numbers[maxValIndex] < numbers[tempArray[i / 2]])
         {
