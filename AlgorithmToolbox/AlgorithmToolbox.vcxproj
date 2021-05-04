@@ -22,7 +22,7 @@
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
     <ProjectGuid>{5c2e3e04-a86c-48db-92da-e4a48b260c85}</ProjectGuid>
-    <RootNamespace>ConsoleApplication2</RootNamespace>
+    <RootNamespace>AlgorithmToolbox</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
     <ProjectName>AlgorithmToolbox</ProjectName>
   </PropertyGroup>
