@@ -6,13 +6,11 @@
 
 //O(n^2)
 long long MaxPairwiseProduct(const std::vector<int>& numbers) {
-    int max_product = 0;
-    int n = numbers.size();
+    long long max_product = 0;
 
-    for (int first = 0; first < n; ++first) {
-        for (int second = first + 1; second < n; ++second) {
-            max_product = std::max((long long)max_product,
-                (long long)numbers[first] * numbers[second]);
+    for (int first = 0; first < numbers.size(); ++first) {
+        for (int second = first + 1; second < numbers.size(); ++second) {
+            max_product = std::max((long long)max_product, (long long)numbers[first] * numbers[second]);
         }
     }
 
@@ -52,18 +50,18 @@ long long MaxPairwiseProductFaster(const std::vector<int>& numbers)
 {
     int maxValIndex = 0;
     int max2ndValIndex = 1;
-    size_t temparraySize = ceil(numbers.size() / 2.0);
+    size_t temparraySize = int(ceil(numbers.size() / 2.0));
     std::vector<int> tempArray(temparraySize);
     for (int i = 0; i < numbers.size(); i+=2)
     {
       
-        if (numbers[i] > numbers[(i + 1) % numbers.size()])
+        if (numbers[i] > numbers[(i+1) % numbers.size()])
         {
             tempArray[i / 2] = i;
         }
         else
         {
-            tempArray[i / 2] = (i + 1) % numbers.size();
+            tempArray[i / 2] = (i+1) % numbers.size();
         }
         if (numbers[maxValIndex] < numbers[tempArray[i / 2]])
         {
@@ -77,13 +75,13 @@ long long MaxPairwiseProductFaster(const std::vector<int>& numbers)
         if (tempArray[i]!= maxValIndex && numbers[max2ndValIndex] < numbers[tempArray[i]])
             max2ndValIndex = tempArray[i];
     }
-    return (long long)numbers[max2ndValIndex] * numbers[maxValIndex];
+    return long long(numbers[max2ndValIndex] * numbers[maxValIndex]);
 }
-//main
+
+
 int main() {
     int n = 3;
-    unsigned int t = time(nullptr);
-    srand(time(NULL));
+    srand(unsigned int(time(NULL)));
     std::vector<int> numbers(n);
     for (int i = 0; i < n; ++i) 
     {
